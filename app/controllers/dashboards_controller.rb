@@ -29,9 +29,6 @@ class DashboardsController < ApplicationController
     raw_data = open(url).read
     parsed_data = JSON.parse(raw_data)
     @rate = parsed_data.fetch("result")
-    p "the rate is"
-    p @rate
-    p "that it is"
     render({ :template => "html_templates/conversion.html.erb" })
   end
 end
